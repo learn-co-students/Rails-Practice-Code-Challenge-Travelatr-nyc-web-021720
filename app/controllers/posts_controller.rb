@@ -21,5 +21,5 @@ class PostsController < ApplicationController
 
     def post_params
     end
-    
+
 end

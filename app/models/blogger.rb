@@ -16,7 +16,6 @@ class Blogger < ApplicationRecord
 
     def most_like
          self.posts.max_by{|p|p.likes}
-        #  byebug
     end
 
 

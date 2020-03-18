@@ -1,0 +1,8 @@
+<h1><%= @destination.name %></h1>
+
+<h4>Country: <%= @destination.country %></h4>
+ 
+ <p>The average age of all unique bloggers who have written about this destination: <%= @destination.avg_age %> years old </p>
+
+Most Likes Post:<%= link_to @destination.most_likes.title, post_path(@destination.most_likes.id) %>
+
