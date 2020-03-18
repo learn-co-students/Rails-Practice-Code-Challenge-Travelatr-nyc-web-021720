@@ -1,0 +1,16 @@
+<h3><%= @blogger.name %></h3>
+ 
+ Age: <%=@blogger.age %><br>
+
+ Bio: <%=@blogger.bio %><br>
+
+<br>
+ 
+Total likes: <%= @blogger.total_like %>
+
+Most likes: <%=link_to @blogger.most_like.title, post_path(@blogger.most_like.id) %>
+
+
+
+
+
