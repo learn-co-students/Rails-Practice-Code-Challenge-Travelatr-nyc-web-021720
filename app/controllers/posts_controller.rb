@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
-    def index
 
+    before_action :find_post,only: [:show, :edit, :update]
+
+    def index
+        @posts=Post.all
     end
 
     def show
-        @post = Post.find(params[:id])
     end
     
     def new
@@ -23,13 +25,16 @@ class PostsController < ApplicationController
     end
 
     def edit
-        @post = Post.find(params[:id])
     end
      
     def update
-        @post = Post.find(params[:id])
         @post.update(params.require(:post).permit!)
-        redirect_to post_path(@post)
+        if @post.valid?
+            redirect_to @post
+        else
+            flash[:errors]=@post.erors.full_messages
+         redirect_to edit_post_path
+        end
     end
 
     private
@@ -37,5 +42,10 @@ class PostsController < ApplicationController
     def post_params
         params.require(:post).permit!
     end
+
+    def find_post
+        @post = Post.find(params[:id])
+    end
+
 
 end

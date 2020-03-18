@@ -11,14 +11,12 @@ class Destination < ApplicationRecord
     end
     
     def avg_age
-
         total_ages=self.bloggers.reduce(0){|sum,b|sum+b.age}
         total_bloggers=self.bloggers.count
 
         avg=total_ages/total_bloggers
 
         avg
-
     end
 
 
