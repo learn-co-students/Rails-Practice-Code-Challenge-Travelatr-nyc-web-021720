@@ -1,0 +1,5 @@
+<h1> Check out  <%=@blogger.name%>  </h1>
+<ul>
+    <%=@blogger.posts.reduce(0){|sum,post| sum + post.likes}%>
+</ul>
+

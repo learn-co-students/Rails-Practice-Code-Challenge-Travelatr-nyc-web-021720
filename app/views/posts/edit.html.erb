@@ -1,0 +1,22 @@
+<h1> edit this bad boy <%= @post.title%></h1>
+
+<%if flash[:errors]%>
+    <ul>
+    <%flash[:errors].each do |error|%>
+     
+     <li> <%=error%></li>
+    
+    <%end%>
+    </ul>
+
+<%end%>
+
+<%= form_for @post do |f|%>
+<%=f.text_field :title %><b>
+<%=f.text_area :content%><b>
+<%=f.number_field :likes%><b>
+<%=f.collection_select :blogger_id, @bloggers,:id,:name %><b>
+<%=f.collection_select :destination_id, @destinations,:id,:name%><b>
+<%=f.submit%><b>
+<%end%>
+
