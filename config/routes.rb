@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   resources :bloggers
   resources :posts
   resources :destinations
-  patch 'posts/:id', to: 'posts#update'
+
+
+  post "/posts/:id/increase_likes", to: "posts#like", as: "like"
 end

@@ -3,7 +3,7 @@ class Destination < ApplicationRecord
     has_many :bloggers, through: :posts
 
     def most_recent_post
-
+        self.posts.last(5)
     end
 
     def most_likes

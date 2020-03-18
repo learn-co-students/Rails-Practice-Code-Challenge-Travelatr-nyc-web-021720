@@ -10,7 +10,5 @@
 	<p><%=link_to @post.destination.name , @post.destination%><br></p>
 
 <!-- Like button that increases likes on a post -->
-<%=button_tag(type: 'button') do %>
-	Like this post
-<%end %>
-<button type="button">Click Me!</button
+<label><%@post.likes %></label>
+<%= button_to "Like", like_path(@post) %>
