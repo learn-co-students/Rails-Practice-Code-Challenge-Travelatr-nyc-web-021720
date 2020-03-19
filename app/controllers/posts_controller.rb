@@ -39,7 +39,7 @@ class PostsController < ApplicationController
 
 
     def like
-        @post.likes = @post.likes+1 
+        @post.likes += 1 
         @post.save
         redirect_to post_path(@post)
     end
