@@ -7,11 +7,13 @@ class Blogger < ApplicationRecord
     validates :bio, length: {minimum:30}
 
     def total_like
-        total=0 
+        total=[] 
          self.posts.each do |post| 
-            total+=post.likes
+            total.push(post.likes)
          end
-         total
+         total.sum
+        #  <label> Total Likes: <%= likes_arr.sum %> </label>
+
     end
 
     def most_like
